@@ -64,6 +64,10 @@ contract LosCubs is ERC721Enumerable, ERC721Pausable, ERC721Burnable, Reentrancy
         }
     }
 
+    function setMintPrice(uint256 newPrice) external onlyOwner {
+        mintPrice = newPrice;
+    }
+
     function setBaseURI(string calldata newURI) external onlyOwner {
         defaultBaseURI = newURI;
     }

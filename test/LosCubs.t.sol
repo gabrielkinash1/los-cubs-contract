@@ -29,4 +29,10 @@ contract LosCubsTest is Test {
         losCubs.setBaseURI("testing123/");
         assertEq(losCubs.tokenURI(1), "testing123/1.json");
     }
+
+    function testSetMintPrice() public {
+        uint256 newPrice = losCubs.mintPrice() / 100;
+        losCubs.setMintPrice(newPrice);
+        assertEq(losCubs.mintPrice(), newPrice);
+    }
 }
