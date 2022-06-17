@@ -24,4 +24,9 @@ contract LosCubsTest is Test {
     function testTokenURI() public {
         assertEq(losCubs.tokenURI(1), "kinash/1.json");
     }
+
+    function testSetBaseURI() public {
+        losCubs.setBaseURI("testing123/");
+        assertEq(losCubs.tokenURI(1), "testing123/1.json");
+    }
 }
